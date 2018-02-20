@@ -8,6 +8,7 @@ let guthubImageDiv = document.getElementById("githubImage")
 let githubTextField = document.getElementById("githubTextField")
 let formElement = document.getElementById("registrationForm")
 let buttonElement = document.getElementById("buttonElement")
+let greeting = document.getElementById("greeting")
 
 
 
@@ -25,6 +26,8 @@ function resetUser(){
   guthubImageDiv.setAttribute("class", "input-field col s3 hidden")
   formElement.setAttribute("action","")
   buttonElement.setAttribute("class", "btn waves-effect waves-light disabled")
+  greeting.innerHTML = "G82"
+
 
 }
 
@@ -40,6 +43,8 @@ function githubUser(data) {
   guthubImageDiv.setAttribute("class", "input-field col s3")
   formElement.setAttribute("action",`https://github.com/${userObject.login}`)
   buttonElement.setAttribute("class", "btn waves-effect waves-light")
+  greeting.innerHTML = `Hi ${userObject.name.split(" ")[0]},`
+
 }
 
 $( "#githubUsername" ).blur( () => getUserData(document.getElementById("githubUsername").value)
