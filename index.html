@@ -15,6 +15,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
 
+
   <header>
   </header>
   <main class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
@@ -39,9 +40,14 @@
                   <input id="password" type="password" class="validate" pattern="[0-9a-zA-Z]{6,40}">
                   <label for="password" data-error="password must be 6 characters or longer">Password</label>
                 </div>
-                <div class="input-field col s12">
-                  <input id="last_name" type="text" class="validate">
-                  <label for="last_name">GitHub Username</label>
+                <div id="githubRow">
+                  <div class="col s3 center-align">
+                    <img src = "http://placehold.it/60x60/" width = "60px" height= "60px" id="githubAvatar" class="circle z-depth-2">
+                  </div>
+                  <div class="input-field col s9">
+                    <input id="githubUsername" type="text" class="validate">
+                    <label for="githubUsername">GitHub Username</label>
+                  </div>
                 </div>
               </div>
               <div class="row"></div>
@@ -88,6 +94,8 @@
   </main>
   <footer>
   </footer>
+  <script src="js/github.js"></script>
+
 </body>
 
 </html>
