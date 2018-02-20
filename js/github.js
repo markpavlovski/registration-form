@@ -6,6 +6,7 @@ let githubAvatar = document.getElementById("githubAvatar")
 let githubUsername = document.getElementById("githubUsername").value
 let guthubImageDiv = document.getElementById("githubImage")
 let githubTextField = document.getElementById("githubTextField")
+let formElement = document.getElementById("registrationForm")
 
 
 
@@ -20,6 +21,7 @@ function resetUser(){
   userObject = {}
   githubTextField.setAttribute("class", "input-field col s12")
   guthubImageDiv.setAttribute("class", "input-field col s3 hidden")
+  formElement.setAttribute("action","")
 }
 
 function githubUser(data) {
@@ -31,6 +33,7 @@ function githubUser(data) {
   console.log(userObject.name)
   githubTextField.setAttribute("class", "input-field col s9")
   guthubImageDiv.setAttribute("class", "input-field col s3")
+  formElement.setAttribute("action",`https://github.com/${username}`)
 }
 
 $( "#githubUsername" ).blur( () => getUserData(document.getElementById("githubUsername").value)

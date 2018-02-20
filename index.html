@@ -28,12 +28,12 @@
       <div class="col s12 m8 offset-m2 l6 offset-l3 xl4 offset-xl4">
         <div class="card white">
           <div class="card-content grey-text text-darken-3">
-            <h2 class="teal-text">G82</h2>
+            <h2 class="teal-text" id ="greeting">G82</h2>
 
             <h5>Create your G82 Account</h5>
 
 
-            <form action="#">
+            <form method="get" action="" id ="registrationForm">
               <div class="row"></div>
               <div class="row">
                 <div class="input-field col s12">
@@ -87,7 +87,7 @@
                 <label for="filled-in-box">Remember me</label>
               </div>
               <div class="col s6 right-align valign">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Create
+                <button class="btn waves-effect waves-light disabled" type="submit" name="action" form="registrationForm">Create
                   <i class="material-icons right">face</i>
                 </button>
               </div>
