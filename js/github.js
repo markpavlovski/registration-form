@@ -2,18 +2,24 @@ console.log("hello world")
 
 let username = 'mrkpvlvski'
 let userObject = {}
-let githubAvatar = document.getElementById("githubAvatar");
-let githubUsername = document.getElementById("githubUsername").value;
-//
-// document.getElementById("githubUsername").addEventListener("focus", getUserData("mrkpvlvski"));
-//
+let githubAvatar = document.getElementById("githubAvatar")
+let githubUsername = document.getElementById("githubUsername").value
+let guthubImageDiv = document.getElementById("githubImage")
+let githubTextField = document.getElementById("githubTextField")
 
 
-// $('document').ready(getUserData(user));
 
 
 function getUserData(username){
-  $.getJSON(`https://api.github.com/users/${username}`, githubUser);
+  $.getJSON(`https://api.github.com/users/${username}`, githubUser)
+  .fail(()=> resetUser())
+}
+
+function resetUser(){
+  githubAvatar.src = "http://placehold.it/60x60/"
+  userObject = {}
+  githubTextField.setAttribute("class", "input-field col s12")
+  guthubImageDiv.setAttribute("class", "input-field col s3 hidden")
 }
 
 function githubUser(data) {
@@ -23,8 +29,9 @@ function githubUser(data) {
 
   githubAvatar["src"] = data.avatar_url
   console.log(userObject.name)
+  githubTextField.setAttribute("class", "input-field col s9")
+  guthubImageDiv.setAttribute("class", "input-field col s3")
 }
 
-// $( "githubUsername" ).blur(getUserData("mrkpvlvski"));
 $( "#githubUsername" ).blur( () => getUserData(document.getElementById("githubUsername").value)
 );
